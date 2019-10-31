@@ -10,6 +10,7 @@ import StyleSheet from '../style';
     this.state ={ 
       email:'',
       password:'',
+      estadoingresar:''
     }
     this.verificar = this.verificar.bind(this);
   }
@@ -37,23 +38,24 @@ verificar (){
   this.props.navigation.navigate('Home');
 
 } else{
-  Alert.alert('Error', 'Contraseña no corresponde a email')
-}
+  this.setState({estadoingresar:'Email no coincide con contraseña.'});
+} 
+
 } else{
-  Alert.alert('Error', 'Email no registrado')
+  this.setState({estadoingresar:'Email no registrado.'});
 }
 } else {
-  Alert.alert('Error', 'Contraseña no válida')
+  this.setState({estadoingresar:'Contraseña no es válida.'});
 } 
       } else {
-        Alert.alert('Error', 'Email no válido')
+        this.setState({estadoingresar:'Email no es válido.'});
       } 
 
 } else{
-  Alert.alert('Error', 'Contraseña no tiene el número requerido de caracteres')
+  this.setState({estadoingresar: 'Contraseña no tiene el número requerido de caracteres.'});
 }
 } else{
-  Alert.alert('Error', 'Email supera el número máxmimo de caracteres')
+  this.setState({estadoingresar:'Email supera el número máximo de caracteres.'});
 }
 
 
@@ -91,31 +93,42 @@ verificar (){
                secureTextEntry={true}
               
             />
+              <Text></Text>
+            <Text></Text>
             
+            <Text style={StyleSheet.error} >{this.state.estadoingresar} </Text>
             </View>
+          
+            
            
 <Text></Text>
-<View>
+<View style={{alignItems:'center'}}>
 
-             <TouchableOpacity  onPress={() => {
-            this.verificar();
-          }} style={StyleSheet.button}>
-               <Text style={StyleSheet.button}>  Entrar </Text>
+        
+
+             <TouchableOpacity  onPress={()=>{this.props.navigation.navigate('SignIn') }}>
+          <Text style={StyleSheet.textButton1}> Registrar Usuario </Text>
+        </TouchableOpacity>
+
+        <Text></Text>
+
+        <TouchableOpacity onPress={()=>{this.props.navigation.navigate('RecuperarContrasena') }}>
+          <Text style={StyleSheet.textButton1}> Recuperar Contraseña </Text>
+        </TouchableOpacity>
+
+        <Text></Text>
+
+        <TouchableOpacity style={StyleSheet.button} onPress={() => {this.verificar()}} >
+               <Text style={StyleSheet.textButton} >  Entrar </Text>
              </TouchableOpacity>
-
              <Text></Text>
 
-             <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('SignIn') }}>
-          <Text style={StyleSheet.textButton}> Registrar Usuario </Text>
-        </TouchableOpacity>
 
-        <Text></Text>
+             <TouchableOpacity style={StyleSheet.button} onPress={() => {this.props.navigation.navigate('Home') }} >
+               <Text style={StyleSheet.textButton} >  Home </Text>
+             </TouchableOpacity>
 
-        <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('RecuperarContrasena') }}>
-          <Text style={StyleSheet.textButton}> Recuperar Contraseña </Text>
-        </TouchableOpacity>
-
-        <Text></Text>
+         
         </View>
 
 

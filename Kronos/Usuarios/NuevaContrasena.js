@@ -17,6 +17,7 @@ export default class NuevaContrasena extends Component {
     super(props); 
     this.state ={ 
       password:'',
+      estadoingresar:''
    
     }
     this.verificar = this.verificar.bind(this);
@@ -35,10 +36,10 @@ verificar (){
   this.props.navigation.navigate('Home');
 
 } else{
-  Alert.alert('Error', 'Contraseña no válidas')
+  this.setState({estadoingresar:'Contraseña no es válida.'});
 }
 }else{
-  Alert.alert('Error', 'Contraseña no tiene el número requerido de caracteres')
+  this.setState({estadoingresar: 'Contraseña no tiene el número requerido de caracteres.'});
 }
 
 }
@@ -64,14 +65,19 @@ verificar (){
             secureTextEntry={true}
             />
 
+<Text></Text>
+            <Text></Text>
             
+            <Text style={StyleSheet.error} >{this.state.estadoingresar} </Text>
             </View>
+
+            <View style={{alignItems:'center'}}>
            
 <Text></Text>
              <TouchableOpacity  onPress={() => {
             this.verificar();
           }} style={StyleSheet.button}>
-               <Text style={StyleSheet.button}>  Aceptar </Text>
+               <Text style={StyleSheet.textButton}>  Aceptar </Text>
              </TouchableOpacity>
 
              <Text></Text>
@@ -81,6 +87,7 @@ verificar (){
         </TouchableOpacity>
         
         <Text> </Text>
+        </View>
 
 
         <Text></Text>

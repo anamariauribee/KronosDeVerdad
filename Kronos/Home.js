@@ -2,11 +2,12 @@ import React, {Component } from 'react';
 import { Button, View, Text,TouchableOpacity, ScrollView, TextInput, Image, Alert } from 'react-native';
 
 import StyleSheet from './style';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 
 export default class App extends Component {
   constructor(props){
-    super(props); 
+    super(props);  
     this.state ={ 
       buscar:'',
     
@@ -43,7 +44,7 @@ render(){
          <View style={{flexDirection: 'row', alignItems: 'center', paddingBottom: 20}}>
         
          <TouchableOpacity  onPress={()=>{this.props.navigation.navigate('Filtros') }}>
-         <Icon name="menu" color='#000000' size={30}></Icon> 
+         <Icon name="bars" color='#000000' size={30}></Icon> 
          </TouchableOpacity>
          <View style={{flex:0.5}}></View>
           <TextInput placeholder="Buscar" style={{width:300}}  autoCorrect={ false } 
@@ -54,7 +55,7 @@ render(){
              <TouchableOpacity  onPress={() => {
             this.verificar();
           }}>
-          <Icon name="check" color='#000000' size={20}> </Icon>
+          <Icon name="search" color='#000000' size={20}> </Icon>
         </TouchableOpacity>
         
         <Text> </Text>
