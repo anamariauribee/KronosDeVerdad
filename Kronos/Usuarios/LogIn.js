@@ -2,20 +2,14 @@ import React, { Component } from "react";
 import {Alert, TextInput, Text, View, TouchableOpacity, ScrollView, Image} from "react-native";
 import StyleSheet from '../style';
 
-
-
  
  export default class LogIn extends Component { 
 
   constructor(props){
     super(props); 
-    global.email= '',
-    global.password= ''
     this.state ={ 
       email:'',
       password:'',
-      estadoingresar:''
-
     }
     this.verificar = this.verificar.bind(this);
   }
@@ -36,33 +30,30 @@ verificar (){
              || this.state.email=="cristinaragnoe@gmail.com" && this.state.password=="654321" 
              || this.state.email=="mateoarteagagiraldo@gmail.com" && this.state.password=="000000"  ){
           
+     
 
   this.setState({email:''});
-  global.email= this.state.email;
   this.setState({password:''});
-  global.password= this.state.password;
   this.props.navigation.navigate('Home');
- 
 
 } else{
-  this.setState({estadoingresar:'Email no coincide con contraseña.'});
-} 
-
+  Alert.alert('Error', 'Contraseña no corresponde a email')
+}
 } else{
-  this.setState({estadoingresar:'Email no registrado.'});
+  Alert.alert('Error', 'Email no registrado')
 }
 } else {
-  this.setState({estadoingresar:'Contraseña no es válida.'});
+  Alert.alert('Error', 'Contraseña no válida')
 } 
       } else {
-        this.setState({estadoingresar:'Email no es válido.'});
+        Alert.alert('Error', 'Email no válido')
       } 
 
 } else{
-  this.setState({estadoingresar: 'Contraseña no tiene el número requerido de caracteres.'});
+  Alert.alert('Error', 'Contraseña no tiene el número requerido de caracteres')
 }
 } else{
-  this.setState({estadoingresar:'Email supera el número máximo de caracteres.'});
+  Alert.alert('Error', 'Email supera el número máxmimo de caracteres')
 }
 
 
@@ -100,38 +91,31 @@ verificar (){
                secureTextEntry={true}
               
             />
-              <Text></Text>
-            <Text></Text>
             
-            <Text style={StyleSheet.error} >{this.state.estadoingresar} </Text>
             </View>
-          
-            
            
 <Text></Text>
-<View style={{alignItems:'center'}}>
+<View>
 
-        
-
-             <TouchableOpacity  onPress={()=>{this.props.navigation.navigate('SignIn') }}>
-          <Text style={StyleSheet.textButton1}> Registrar Usuario </Text>
-        </TouchableOpacity>
-
-        <Text></Text>
-
-        <TouchableOpacity onPress={()=>{this.props.navigation.navigate('RecuperarContrasena') }}>
-          <Text style={StyleSheet.textButton1}> Recuperar Contraseña </Text>
-        </TouchableOpacity>
-
-        <Text></Text>
-
-        <TouchableOpacity style={StyleSheet.button} onPress={() => {this.verificar()}} >
-               <Text style={StyleSheet.textButton} >  Entrar </Text>
+             <TouchableOpacity  onPress={() => {
+            this.verificar();
+          }} style={StyleSheet.button}>
+               <Text style={StyleSheet.button}>  Entrar </Text>
              </TouchableOpacity>
+
              <Text></Text>
 
+             <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('SignIn') }}>
+          <Text style={StyleSheet.textButton}> Registrar Usuario </Text>
+        </TouchableOpacity>
 
-         
+        <Text></Text>
+
+        <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('RecuperarContrasena') }}>
+          <Text style={StyleSheet.textButton}> Recuperar Contraseña </Text>
+        </TouchableOpacity>
+
+        <Text></Text>
         </View>
 
 

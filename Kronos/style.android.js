@@ -15,8 +15,7 @@ export default StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         color: 'red',
-        fontSize: 13,
-
+        fontSize: 12,
       },
 
       fields:{
@@ -35,22 +34,17 @@ export default StyleSheet.create({
     button: {
         alignItems: 'center',
         padding: 10,
-        fontSize: 15,
+        fontSize:15,
         flexDirection: 'row',
         backgroundColor:'#565656',
         height: 40,
-        width:200,
         justifyContent: 'center', 
         flex: 0,
         color:'#FFFFFF',
     },
 
-    textButton1:{
-      textDecorationLine: 'underline'
-    },
-
     textButton:{
-      color:'#FFFFFF',
+        color:'#ffffff',
     },
 
     sugerencias:{

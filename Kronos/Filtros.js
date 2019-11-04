@@ -111,7 +111,6 @@ export default class Homescreen extends Component {
               />
               <Text style={{paddingLeft: 10}}>Descuentos</Text>
             </View>
-            <View style={{alignItems:'center'}}>
             <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('Resultados') }}>
           <Text style={{color:'#FFFFFF'}} > Aplicar </Text>
         </TouchableOpacity>
@@ -119,7 +118,7 @@ export default class Homescreen extends Component {
         <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('Home') }}>
           <Text style={{color:'#FFFFFF'}} > Volver </Text>
         </TouchableOpacity>
-           </View>
+           
            
 
           </View>

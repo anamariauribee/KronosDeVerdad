@@ -185,7 +185,6 @@ export default class SignIn extends Component {
            
           </View>
         </ScrollView>
-        <View style={{alignItems:'center'}}>
         <Text> </Text>
         <TouchableOpacity style={StyleSheet.button} onPress={this.submit }>
           <Text style={StyleSheet.textButton}> Aceptar </Text>
@@ -196,7 +195,7 @@ export default class SignIn extends Component {
         <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('LogIn') }}>
           <Text style={StyleSheet.textButton}> Cancelar </Text>
         </TouchableOpacity>
-      </View>
+
         <Text></Text>
         <Text></Text>
         <Text></Text>
