@@ -17,7 +17,6 @@ export default class App extends Component {
     super(props); 
     this.state ={ 
       codigo:'',
-      estadoingresar:''
     
     }
     this.verificar = this.verificar.bind(this);
@@ -36,14 +35,14 @@ verificar (){
   this.props.navigation.navigate('NuevaContrasena');
 
 } else{
-  this.setState({estadoingresar:'Código no es válido.'});
+  Alert.alert('Error', 'Código inválido')
 }
       } else {
-        this.setState({estadoingresar:'Código no es válido.'});
+        Alert.alert('Error', 'Código inválido')
       } 
 
 } else{
-  this.setState({estadoingresar:'Código no es válido.'});
+  Alert.alert('Error', 'Código inválido')
 }
 
 
@@ -69,19 +68,14 @@ verificar (){
               onChangeText={(text) => this.setState({codigo: text})}
               placeholder="Código"
             />
-              <Text></Text>
-            <Text></Text>
-            
-            <Text style={StyleSheet.error} >{this.state.estadoingresar} </Text>
             
             </View>
            
 <Text></Text>
-<View style={{alignItems:'center'}}>
              <TouchableOpacity  onPress={() => {
             this.verificar();
           }} style={StyleSheet.button}>
-               <Text style={StyleSheet.textButton}>  Enviar </Text>
+               <Text style={StyleSheet.button}>  Enviar </Text>
              </TouchableOpacity>
 
              <Text></Text>
@@ -89,7 +83,6 @@ verificar (){
              <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('LogIn') }}>
           <Text style={StyleSheet.textButton}> Cancelar </Text>
         </TouchableOpacity>
-        </View>
         
         <Text> </Text>
 

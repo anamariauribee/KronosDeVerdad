@@ -17,7 +17,6 @@ export default class RecuperarContrasena extends Component {
     super(props); 
     this.state ={ 
       email:'',
-      estadoingresar:''
     }
     this.verificar = this.verificar.bind(this);
   }
@@ -37,15 +36,15 @@ verificar (){
   this.props.navigation.navigate('EntrarCodigo');
 
 } else{
-  this.setState({estadoingresar:'Email no registrado.'});
+  Alert.alert('Error', 'Email no registrado')
 }
 
       } else {
-        this.setState({estadoingresar:'Email no es válido.'});
+        Alert.alert('Error', 'Email no válido')
       } 
 
 } else{
-  this.setState({estadoingresar:'Email supera el número máximo de caracteres.'});
+  Alert.alert('Error', 'Email supera el número máxmimo de caracteres')
 }
 
 
@@ -72,21 +71,17 @@ verificar (){
               onChangeText={(text) => this.setState({email: text})}
               placeholder="Email"
             />
-            <Text></Text>
-            <Text style={StyleSheet.error} >{this.state.estadoingresar} </Text>
+            
             </View>
            
 <Text></Text>
-<View style={{alignItems:'center'}}>
              <TouchableOpacity  onPress={() => {
             this.verificar();
           }} style={StyleSheet.button}>
-               <Text style={StyleSheet.textButton}>  Enviar </Text>
+               <Text style={StyleSheet.button}>  Enviar </Text>
              </TouchableOpacity>
 
-               <Text></Text>
-        
-            
+             <Text></Text>
 
              <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('LogIn') }}>
           <Text style={StyleSheet.textButton}> Cancelar </Text>
@@ -94,7 +89,7 @@ verificar (){
         
         <Text> </Text>
 
-    </View>
+
         <Text></Text>
         <Text></Text>
         <Text></Text>
