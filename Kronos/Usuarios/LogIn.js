@@ -2,15 +2,20 @@ import React, { Component } from "react";
 import {Alert, TextInput, Text, View, TouchableOpacity, ScrollView, Image} from "react-native";
 import StyleSheet from '../style';
 
+
+
  
  export default class LogIn extends Component { 
 
   constructor(props){
     super(props); 
+    global.email= '',
+    global.password= ''
     this.state ={ 
       email:'',
       password:'',
       estadoingresar:''
+
     }
     this.verificar = this.verificar.bind(this);
   }
@@ -31,11 +36,13 @@ verificar (){
              || this.state.email=="cristinaragnoe@gmail.com" && this.state.password=="654321" 
              || this.state.email=="mateoarteagagiraldo@gmail.com" && this.state.password=="000000"  ){
           
-     
 
   this.setState({email:''});
+  global.email= this.state.email;
   this.setState({password:''});
+  global.password= this.state.password;
   this.props.navigation.navigate('Home');
+ 
 
 } else{
   this.setState({estadoingresar:'Email no coincide con contraseña.'});
@@ -123,10 +130,6 @@ verificar (){
              </TouchableOpacity>
              <Text></Text>
 
-
-             <TouchableOpacity style={StyleSheet.button} onPress={() => {this.props.navigation.navigate('Home') }} >
-               <Text style={StyleSheet.textButton} >  Home </Text>
-             </TouchableOpacity>
 
          
         </View>

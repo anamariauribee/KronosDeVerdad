@@ -3,6 +3,7 @@ import { Button, View, Text,TouchableOpacity, ScrollView, TextInput, Image, Aler
 
 import StyleSheet from './style';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 export default class App extends Component {
@@ -63,6 +64,7 @@ render(){
         <View style={{ flex: 1, justifyContent:'center', alignItems:'center' }}>
         <Image source={require('./Images/logos.png')}  style={{height: 90,
         width: 90}}/>
+        <Text style={{fontSize:40}}>KRONOS</Text>
         
       <View style={{ flex: 1, alignItems: 'center'}}>
         
@@ -90,7 +92,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia1') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Hombre   </Text>
-          <Icon name="gender-male" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="gender-male" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
@@ -110,7 +112,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia2') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Mujer   </Text>
-          <Icon name="gender-female" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="gender-female" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
@@ -135,7 +137,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia2') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Accesorios   </Text>
-          <Icon name="sunglasses" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="sunglasses" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
@@ -155,7 +157,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia2') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Zapatos   </Text>
-          <Icon name="shoe-heel" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="shoe-heel" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
