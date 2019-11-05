@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {View,Text, Button, ScrollView,TouchableOpacity,Switch,} from 'react-native';
 import  RNFormHelpers  from 'react-native-form-helpers';
-import FormInput from './FormInput'
-import { validationDictionary } from "./dictionary.js"; // Archivo donde se incluyen
+import FormInput from '../Usuarios/FormInput'
+import { validationDictionary } from "../Usuarios/dictionary"; // Archivo donde se incluyen
                                                             // todas las condiciones del Form
 import StyleSheet from '../style' //Archivo donde se modifican todas las cosas estéticas, 
                                   // si se está en computador mac se redireige a style.ios.js,
@@ -29,19 +29,7 @@ export default class SignIn extends Component {
           type: 'age',
           value: '',
         },
-        email: {                  //Deja ingresar correos menos los de nosotros que aparecen que ya están
-          type: 'email',            //registrados
-          value: ''
-        },                
-        password: {               //Deja ingresar letras, números y ciertos signos de 6 a 15 caracteres
-          type: 'password',
-          value: '',
-        },
-      
-        tos: {                      //Deja ingresar si es true 
-          type: 'bool',
-          value: false,
-        },
+   
       },
     }; //Todos los campos que tenemos junto con el tipo de dato que contienen
 
@@ -59,13 +47,13 @@ export default class SignIn extends Component {
     const firstInvalidCoordinate = this.getFormValidation();
 
     if (firstInvalidCoordinate == null) {
-      this.props.navigation.navigate('Home')
+      this.props.navigation.navigate('Users')
     }
       return;
     }
 
     //Si no hay ningun campo invalido, entonces se navega al home, de lo contario se queda en la
-    //página de singin
+ 
   
 
   renderError(id) {
@@ -117,22 +105,10 @@ export default class SignIn extends Component {
             }
           }
           />
-
-        <FormInput
-            label={'Email'}
-            onChangeText={value => {
-              this.onInputChange({id: 'email', value});
-            }}
-            errorLabel={inputs.email.errorLabel}
-            touched={inputs.email.touched}
-            onLayout={({nativeEvent}) => {
-              this.setInputPosition({
-                ids: ['email'],
-                value: nativeEvent.layout.y,
-              });
-            }
-          }
-          />  
+          
+    <Text>Email </Text>
+        <Text style={{borderWidth: 1, borderColor: 'black', padding: 10, marginBottom: 15,
+            alignSelf: 'stretch',}}> {global.email}</Text>
 
           <FormInput
             label={'Edad'}
@@ -150,40 +126,8 @@ export default class SignIn extends Component {
           }
           />
 
-            <FormInput
-            label={'Contraseña'}
-            onChangeText={value => {
-              this.onInputChange({id: 'password', value});
-            }}
-            errorLabel={inputs.password.errorLabel}
-            touched={inputs.password.touched}
-            secureTextEntry={true}
-            onLayout={({nativeEvent}) => {
-              this.setInputPosition({
-                ids: ['password'],
-                value: nativeEvent.layout.y,
-              });
-            }
-          }
-          />
-
-          <View
-            onLayout={({nativeEvent}) => {
-              this.setInputPosition({
-                ids: ['tos'],
-                value: nativeEvent.layout.y,
-              });
-            }}>
-            <View style={{flexDirection: 'row', alignItems: 'center', paddingBottom: 20}}>
-              <Switch value={this.state.inputs.tos.value}
-                onValueChange={value => { this.onInputChange({id: 'tos', value});}}
-              />
-              <Text style={{paddingLeft: 10}}>Aceptar Términos y Condiciones</Text>
-            </View>
-            {this.renderError('tos')}
-          
-           
-          </View>
+            
+         
         </ScrollView>
         <View style={{alignItems:'center'}}>
         <Text> </Text>
@@ -191,11 +135,8 @@ export default class SignIn extends Component {
           <Text style={StyleSheet.textButton}> Aceptar </Text>
         </TouchableOpacity>
         
-        <Text> </Text>
+     
 
-        <TouchableOpacity style={StyleSheet.button} onPress={()=>{this.props.navigation.navigate('LogIn') }}>
-          <Text style={StyleSheet.textButton}> Cancelar </Text>
-        </TouchableOpacity>
       </View>
         <Text></Text>
         <Text></Text>

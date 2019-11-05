@@ -2,11 +2,13 @@ import React, {Component } from 'react';
 import { Button, View, Text,TouchableOpacity, ScrollView, TextInput, Image, Alert } from 'react-native';
 
 import StyleSheet from './style';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 export default class App extends Component {
   constructor(props){
-    super(props); 
+    super(props);  
     this.state ={ 
       buscar:'',
     
@@ -43,7 +45,7 @@ render(){
          <View style={{flexDirection: 'row', alignItems: 'center', paddingBottom: 20}}>
         
          <TouchableOpacity  onPress={()=>{this.props.navigation.navigate('Filtros') }}>
-         <Icon name="menu" color='#000000' size={30}></Icon> 
+         <Icon name="bars" color='#000000' size={30}></Icon> 
          </TouchableOpacity>
          <View style={{flex:0.5}}></View>
           <TextInput placeholder="Buscar" style={{width:300}}  autoCorrect={ false } 
@@ -54,7 +56,7 @@ render(){
              <TouchableOpacity  onPress={() => {
             this.verificar();
           }}>
-          <Icon name="check" color='#000000' size={20}> </Icon>
+          <Icon name="search" color='#000000' size={20}> </Icon>
         </TouchableOpacity>
         
         <Text> </Text>
@@ -62,6 +64,7 @@ render(){
         <View style={{ flex: 1, justifyContent:'center', alignItems:'center' }}>
         <Image source={require('./Images/logos.png')}  style={{height: 90,
         width: 90}}/>
+        <Text style={{fontSize:40}}>KRONOS</Text>
         
       <View style={{ flex: 1, alignItems: 'center'}}>
         
@@ -89,7 +92,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia1') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Hombre   </Text>
-          <Icon name="gender-male" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="gender-male" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
@@ -109,7 +112,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia2') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Mujer   </Text>
-          <Icon name="gender-female" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="gender-female" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
@@ -134,7 +137,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia2') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Accesorios   </Text>
-          <Icon name="sunglasses" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="sunglasses" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
@@ -154,7 +157,7 @@ render(){
           onPress={()=>{this.props.navigation.navigate('Sugerencia2') }}>
           
           <Text  style={{color:'#FFFFFF'}}> Zapatos   </Text>
-          <Icon name="shoe-heel" color='#FFFFFF' size={30}></Icon> 
+          <Icon2 name="shoe-heel" color='#FFFFFF' size={30}></Icon2> 
     
           </TouchableOpacity>
 
