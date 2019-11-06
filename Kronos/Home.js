@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import { Button, View, Text,TouchableOpacity, ScrollView, TextInput, Image, Alert } from 'react-native';
+import { Button, View, Text,TouchableOpacity, ScrollView, TextInput, Image, Alert, ImageBackground } from 'react-native';
 
 import StyleSheet from './style';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -91,8 +91,9 @@ render(){
           flex: 0,}} 
           onPress={()=>{this.props.navigation.navigate('Sugerencia1') }}>
           
-          <Text  style={{color:'#FFFFFF'}}> Hombre   </Text>
-          <Icon2 name="gender-male" color='#FFFFFF' size={30}></Icon2> 
+        
+          <ImageBackground source={require('./Images/logos.png')}  style={{height: 50,
+        width: 90}}/>
     
           </TouchableOpacity>
 

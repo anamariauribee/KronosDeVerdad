@@ -128,6 +128,10 @@ verificar (){
         <TouchableOpacity style={StyleSheet.button} onPress={() => {this.verificar()}} >
                <Text style={StyleSheet.textButton} >  Entrar </Text>
              </TouchableOpacity>
+
+             <TouchableOpacity style={StyleSheet.button} onPress={() => {this.props.navigation.navigate('Home') }} >
+               <Text style={StyleSheet.textButton} >  Home </Text>
+             </TouchableOpacity>
              <Text></Text>
 
 

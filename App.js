@@ -115,11 +115,7 @@ const AppNavigator = createStackNavigator({
     screen: LogInScreen,
     navigationOptions:  {
       title: 'LogIn',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
   },
   CambiarContrasena: {
@@ -127,10 +123,7 @@ const AppNavigator = createStackNavigator({
     navigationOptions:  {
       title: 'Cambiar Contraseña        ',
      
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
   },
   
@@ -139,42 +132,27 @@ const AppNavigator = createStackNavigator({
     navigationOptions:  {
       title: 'Editar Información        ',
      
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   },
 },
   Sugerencia1: {
     screen: Sugerencia1Screen, 
     navigationOptions:  {
       title: 'Sugerencia 1',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   } 
   },
   Sugerencia2: {
     screen: Sugerencia2Screen, 
     navigationOptions:  {
       title: 'Sugerencia 2',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   } 
   },Sugerencia3: {
     screen: Sugerencia3Screen, 
     navigationOptions:  {
       title: 'Sugerencia 3',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   } 
   },
 
@@ -182,33 +160,21 @@ const AppNavigator = createStackNavigator({
   screen: Sugerencia4Screen, 
   navigationOptions:  {
     title: 'Sugerencia 4',
-    headerLeft: null,
-    headerTitleStyle: { 
-      textAlign:"center", 
-      flex:1 
-  },
+    header: null,
 } 
 },
   SignIn: {
     screen: SignInScreen,
     navigationOptions:  {
       title: 'Registrar Usuario',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
   },
   RecuperarContrasena: {
     screen: RecuperarContrasenaScreen,
     navigationOptions:  {
       title: 'Recuperar Contraseña',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
       
   },
 },
@@ -216,22 +182,14 @@ const AppNavigator = createStackNavigator({
     screen: FiltrosScreen,
     navigationOptions:  {
       title: 'Filtros',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
 },
   EntrarCodigo: {
     screen: EntrarCodigoScreen,
     navigationOptions:  {
       title: 'Código',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
   },
 
@@ -239,11 +197,7 @@ const AppNavigator = createStackNavigator({
     screen: ResultadosScreen,
     navigationOptions:  {
       title: 'Resultados',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
   },
 
@@ -251,11 +205,7 @@ const AppNavigator = createStackNavigator({
     screen: NuevaContrasenaScreen,
     navigationOptions:  {
       title: 'Establecer Nueva Contraseña',
-      headerLeft: null,
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 
-    },
+      header: null,
   }
   }, 
 }, {
